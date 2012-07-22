@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<xml>
+	<Menu>
+		<content>
+			<name>Picture Player</name>
+			<sel>1</sel>
+			<module>Plugins.Extensions.PicturePlayer.plugin</module>
+			<screen><![CDATA[picshow]]></screen>
+		</content>
+	</Menu>
+</xml>

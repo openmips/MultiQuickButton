@@ -135,6 +135,53 @@ def InfoBarPlugins__init__(self):
 
 		self["QuickButtonActions"] = MQBActionMap(["QuickButtonActions"],
 			{
+				"tv": self.quickSelectGlobal,
+				"mute": self.quickSelectGlobal,
+				"f1": self.quickSelectGlobal,
+				"f1_long": self.quickSelectGlobal,
+				"f2": self.quickSelectGlobal,
+				"f2_long": self.quickSelectGlobal,
+				"f3": self.quickSelectGlobal,
+				"f3_long": self.quickSelectGlobal,
+				"f4": self.quickSelectGlobal,
+				"f4_long": self.quickSelectGlobal,
+				"flist": self.quickSelectGlobal,
+				"glist": self.quickSelectGlobal,
+				"fav": self.quickSelectGlobal,
+				"aspect": self.quickSelectGlobal,
+				"previous": self.quickSelectGlobal,
+				"rewind": self.quickSelectGlobal,
+				"fforward": self.quickSelectGlobal,
+				"next": self.quickSelectGlobal,
+				"timeshift": self.quickSelectGlobal,
+				"stop": self.quickSelectGlobal,
+				"playpause": self.quickSelectGlobal,
+				"record": self.quickSelectGlobal,
+				"volup": self.quickSelectGlobal,
+				"voldown": self.quickSelectGlobal,
+				"guide": self.quickSelectGlobal,
+				"guide_long": self.quickSelectGlobal,
+				"exit": self.quickSelectGlobal,
+				"chnup": self.quickSelectGlobal,
+				"chndown": self.quickSelectGlobal,
+				"info": self.quickSelectGlobal,
+				"info_long": self.quickSelectGlobal,
+				"audio": self.quickSelectGlobal,
+				"audio_long": self.quickSelectGlobal,
+				"info": self.quickSelectGlobal,"up": self.quickSelectGlobal,
+				"left": self.quickSelectGlobal,
+				"down": self.quickSelectGlobal,
+				"right": self.quickSelectGlobal,
+				"menu": self.quickSelectGlobal,
+				"menu_long": self.quickSelectGlobal,
+				"video": self.quickSelectGlobal,
+				"video_long": self.quickSelectGlobal,
+				"history": self.quickSelectGlobal,
+				"history_long": self.quickSelectGlobal,
+				"opt": self.quickSelectGlobal,
+				"opt_long": self.quickSelectGlobal,
+				"text": self.quickSelectGlobal,
+				"text_long": self.quickSelectGlobal,
 				"red": self.quickSelectGlobal,
 				"red_long": self.quickSelectGlobal,
 				"green": self.quickSelectGlobal,
@@ -143,38 +190,6 @@ def InfoBarPlugins__init__(self):
 				"yellow_long": self.quickSelectGlobal,
 				"blue": self.quickSelectGlobal,
 				"blue_long": self.quickSelectGlobal,
-				"pvr": self.quickSelectGlobal,
-				"pvr_long": self.quickSelectGlobal,
-				"radio": self.quickSelectGlobal,
-				"radio_long": self.quickSelectGlobal,
-				"tv": self.quickSelectGlobal,
-				"text": self.quickSelectGlobal,
-				"text_long": self.quickSelectGlobal,
-				"help_long": self.quickSelectGlobal,
-				"info": self.quickSelectGlobal,
-				"info_long": self.quickSelectGlobal,
-				"end": self.quickSelectGlobal,
-				"end_long": self.quickSelectGlobal,
-				"home": self.quickSelectGlobal,
-				"home_long": self.quickSelectGlobal,
-				"cross_up": self.quickSelectGlobal,
-				"cross_down": self.quickSelectGlobal,
-				"cross_left": self.quickSelectGlobal,
-				"cross_right": self.quickSelectGlobal,
-				"channeldown": self.quickSelectGlobal,
-				"channelup": self.quickSelectGlobal,
-				"next": self.quickSelectGlobal,
-				"previous": self.quickSelectGlobal,
-				"audio": self.quickSelectGlobal,
-				"ok": self.quickSelectGlobal,
-				"exit": self.quickSelectGlobal,	
-				"play": self.quickSelectGlobal,
-				"pause": self.quickSelectGlobal,	
-				"fastforward": self.quickSelectGlobal,	
-				"rewind": self.quickSelectGlobal,	
-				"f1": self.quickSelectGlobal,
-				"f2": self.quickSelectGlobal,
-				"f3": self.quickSelectGlobal,
 			})
 	else:
 		InfoBarPlugins.__init__ = InfoBarPlugins.__init__
@@ -251,9 +266,8 @@ def quickSelectGlobal(self, key):
 
 class MQBActionMap(ActionMap):
 	def action(self, contexts, action):
-		quickSelection = ("red","red_long","green","green_long","yellow","yellow_long","blue","blue_long","pvr","pvr_long","radio","radio_long", \
-				  "text","text_long","help_long","info","info_long","end","end_long","home","home_long","cross_up","cross_down","cross_left", \
-				  "cross_right","previous","next","channelup","channeldown","f1","f2","f3","audio","exit","ok","play","pause","rewind","fastforward","tv")
+		quickSelection = ("tv","mute","f1","f1_long","f2","f2_long","f3","f3_long","f4","f4_long","flist","glist","fav","aspect","previous","rewind","fforward","next","timeshift","stop","playpause","record","volup","voldown","guide","guide_long","exit","chnup","chndown","info","info_long","audio","audio_long","info","up","left","down","right","menu","menu_long","video","video_long","history","history_long","opt","opt_long","text","text_long","red","red_long","green","green_long","yellow","yellow_long","blue","blue_long")
+
 		if (action in quickSelection and self.actions.has_key(action)):
 			res = self.actions[action](action)
 			if res is not None:
@@ -266,7 +280,7 @@ def main(session,**kwargs):
 	session.open(MultiQuickButton)
 
 def menu(menuid, **kwargs):
-	if menuid == "mainmenu":
+	if menuid == "system":
 		return [(_("Multi Quickbutton"), main, "multi_quick", 55)]
 	return []
 
@@ -277,7 +291,7 @@ def Plugins(**kwargs):
 				fnc = autostart),
 				PluginDescriptor(
 				name="Multi Quickbutton",
-				description="Multi Quickbutton for Keyboard and RC VU+Version",
+				description="Multi Quickbutton for Keyboard and RC Gigablue",
 				where = PluginDescriptor.WHERE_PLUGINMENU,
 				icon="multiquickbutton.png",
 				fnc=main),
@@ -287,7 +301,7 @@ def Plugins(**kwargs):
 				fnc=main),
 				PluginDescriptor(
 				name="Multi Quickbutton",
-				description="Multi Quickbutton for Keyboard and RC VU+Version",
+				description="Multi Quickbutton for Keyboard and RC Gigablue",
 				where = PluginDescriptor.WHERE_MENU,
 				fnc=menu)]
 	else:
@@ -296,7 +310,7 @@ def Plugins(**kwargs):
 				fnc = autostart),
 				PluginDescriptor(
 				name="Multi Quickbutton",
-				description="Multi Quickbutton for Keyboard and RC VU+Version",
+				description="Multi Quickbutton for Keyboard and RC Gigablue",
 				where = PluginDescriptor.WHERE_PLUGINMENU,
 				icon="multiquickbutton.png",
 				fnc=main),

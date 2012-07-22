@@ -55,9 +55,7 @@ menuentry=_("Main menu") + ": "
 info=_("Info") + ": "
 okexit=_("OK/EXIT") + ": "
 
-values = ("red","red_long","green","green_long","yellow","yellow_long","blue","blue_long","pvr","pvr_long","radio","radio_long","text","text_long", \
-			"help_long","info","info_long","end","end_long","home","home_long","cross_up","cross_down","cross_left","cross_right","previous","next", \
-			"channelup","channeldown","audio","ok","exit","play","pause","fastforward","rewind","tv")
+values = ("tv","mute","f1","f1_long","f2","f2_long","f3","f3_long","f4","f4_long","flist","glist","fav","aspect","previous","rewind","fforward","next","timeshift","stop","playpause","record","volup","voldown","guide","guide_long","exit","chnup","chndown","info","info_long","audio","audio_long","info","up","left","down","right","menu","menu_long","video","video_long","history","history_long","opt","opt_long","text","text_long","red","red_long","green","green_long","yellow","yellow_long","blue","blue_long")
 
 class MultiQuickButton(Screen):
 
@@ -181,6 +179,54 @@ class MultiQuickButton(Screen):
 			else:
 				globals()['functionbutton_%s' % button] = " "
 		self.list = []
+		self.list.append(QuickButtonListEntry('',(_('TV/RADIO') + functionbutton_tv, 'tv')))
+		self.list.append(QuickButtonListEntry('',(_('Mute') + functionbutton_mute, 'mute')))
+		self.list.append(QuickButtonListEntry('',(_('F1 (Giga)') + functionbutton_f1, 'f1')))
+		self.list.append(QuickButtonListEntry('',((_('F1 (Giga)') + _(' long')) + functionbutton_f1_long, 'f1_long')))
+		self.list.append(QuickButtonListEntry('',(_('F2 (Giga)') + functionbutton_f2, 'f2')))
+		self.list.append(QuickButtonListEntry('',((_('F2 (Giga)') + _(' long')) + functionbutton_f2_long, 'f2_long')))
+		self.list.append(QuickButtonListEntry('',(_('F3 (Giga)') + functionbutton_f3, 'f3')))
+		self.list.append(QuickButtonListEntry('',((_('F3 (Giga)') + _(' long')) + functionbutton_f3_long, 'f3_long')))
+		self.list.append(QuickButtonListEntry('',(_('F4 (Giga)') + functionbutton_f4, 'f4'))) 	
+                self.list.append(QuickButtonListEntry('',((_('F4 (Giga)') + _(' long')) + functionbutton_f4_long, 'f4_long')))
+		self.list.append(QuickButtonListEntry('',(_('FLIST') + functionbutton_flist, 'flist'))) 		
+		self.list.append(QuickButtonListEntry('',(_('GLIST') + functionbutton_glist, 'glist'))) 		
+		self.list.append(QuickButtonListEntry('',(_('FAV') + functionbutton_fav, 'fav'))) 
+		self.list.append(QuickButtonListEntry('',(_('ASPECT') + functionbutton_aspect, 'aspect')))
+		self.list.append(QuickButtonListEntry('',(_('PREVIOUS') + functionbutton_previous, 'previous'))) 		
+		self.list.append(QuickButtonListEntry('',(_('REWIND') + functionbutton_rewind, 'rewind'))) 		
+		self.list.append(QuickButtonListEntry('',(_('FASTFORWARD') + functionbutton_fforward, 'fforward'))) 
+		self.list.append(QuickButtonListEntry('',(_('NEXT') + functionbutton_next, 'next')))
+		self.list.append(QuickButtonListEntry('',(_('TIMESHIFT') + functionbutton_timeshift, 'timeshift'))) 		
+		self.list.append(QuickButtonListEntry('',(_('STOP') + functionbutton_stop, 'stop'))) 		
+		self.list.append(QuickButtonListEntry('',(_('PLAY/PAUSE') + functionbutton_playpause, 'playpause'))) 
+		self.list.append(QuickButtonListEntry('',(_('RECORD') + functionbutton_record, 'record')))
+		self.list.append(QuickButtonListEntry('',(_('VOLUME +') + functionbutton_volup, 'volup'))) 		
+		self.list.append(QuickButtonListEntry('',(_('VOLUME -') + functionbutton_voldown, 'voldown'))) 		
+		self.list.append(QuickButtonListEntry('',(_('GUIDE') + functionbutton_guide, 'guide'))) 
+		self.list.append(QuickButtonListEntry('',((_('GUIDE') + _(' long')) + functionbutton_guide_long, 'guide_long')))
+		self.list.append(QuickButtonListEntry('',(_('EXIT') + functionbutton_exit, 'exit')))		
+		self.list.append(QuickButtonListEntry('',(_('CHANNEL +') + functionbutton_chnup, 'chnup')))
+		self.list.append(QuickButtonListEntry('',(_('CHANNEL -') + functionbutton_chndown, 'chndown')))
+		self.list.append(QuickButtonListEntry('',(_('INFO') + functionbutton_info, 'info'))) 
+		self.list.append(QuickButtonListEntry('',((_('INFO') + _(' long')) + functionbutton_info_long, 'info_long')))
+		self.list.append(QuickButtonListEntry('',(_('AUDIO') + functionbutton_audio, 'audio'))) 
+		self.list.append(QuickButtonListEntry('',((_('AUDIO') + _(' long')) + functionbutton_audio_long, 'audio_long')))
+		self.list.append(QuickButtonListEntry('',(_('INFO') + functionbutton_info, 'info'))) 
+		self.list.append(QuickButtonListEntry('',(_('UP') + functionbutton_up, 'up'))) 
+		self.list.append(QuickButtonListEntry('',(_('LEFT') + functionbutton_left, 'left'))) 
+		self.list.append(QuickButtonListEntry('',(_('DOWN') + functionbutton_down, 'down'))) 
+		self.list.append(QuickButtonListEntry('',(_('RIGHT') + functionbutton_right, 'right'))) 
+		self.list.append(QuickButtonListEntry('',(_('MENU') + functionbutton_menu, 'menu'))) 
+		self.list.append(QuickButtonListEntry('',((_('MENU') + _(' long')) + functionbutton_menu_long, 'menu_long')))	
+		self.list.append(QuickButtonListEntry('',(_('VIDEO') + functionbutton_video, 'video'))) 
+		self.list.append(QuickButtonListEntry('',((_('VIDEO') + _(' long')) + functionbutton_video_long, 'video_long')))
+		self.list.append(QuickButtonListEntry('',(_('HISTORY') + functionbutton_history, 'history'))) 
+		self.list.append(QuickButtonListEntry('',((_('HISTORY') + _(' long')) + functionbutton_history_long, 'history_long')))
+		self.list.append(QuickButtonListEntry('',(_('OPT') + functionbutton_opt, 'opt'))) 
+		self.list.append(QuickButtonListEntry('',((_('OPT') + _(' long')) + functionbutton_opt_long, 'opt_long')))
+		self.list.append(QuickButtonListEntry('',(_('TEXT') + functionbutton_text, 'text'))) 
+		self.list.append(QuickButtonListEntry('',((_('TEXT') + _(' long')) + functionbutton_text_long, 'text_long')))
 		self.list.append(QuickButtonListEntry('',(_('red') + functionbutton_red, 'red')))
 		self.list.append(QuickButtonListEntry('',((_('red') + _(' long')) + functionbutton_red_long, 'red_long')))
 		self.list.append(QuickButtonListEntry('',(_('green') + functionbutton_green, 'green')))
@@ -189,36 +235,6 @@ class MultiQuickButton(Screen):
 		self.list.append(QuickButtonListEntry('',((_('yellow') + _(' long')) + functionbutton_yellow_long, 'yellow_long')))
 		self.list.append(QuickButtonListEntry('',(_('blue') + functionbutton_blue, 'blue')))
 		self.list.append(QuickButtonListEntry('',((_('blue') + _(' long')) + functionbutton_blue_long, 'blue_long')))
-		self.list.append(QuickButtonListEntry('',(_('TEXT') + functionbutton_text, 'text')))
-		self.list.append(QuickButtonListEntry('',((_('TEXT') + _(' long')) + functionbutton_text_long, 'text_long')))
-		self.list.append(QuickButtonListEntry('',((_('HELP') + _(' long')) + functionbutton_help_long, 'help_long')))
-		self.list.append(QuickButtonListEntry('',(_('VU+ EPG / INFO') + functionbutton_info, 'info')))
-		self.list.append(QuickButtonListEntry('',((_('VU+ EPG / INFO') + _(' long')) + functionbutton_info_long, 'info_long')))
-		self.list.append(QuickButtonListEntry('',(_('HOME') + functionbutton_home, 'home')))
-		self.list.append(QuickButtonListEntry('',((_('HOME') + _(' long')) + functionbutton_home_long, 'home_long')))
-		self.list.append(QuickButtonListEntry('',(_('END') + functionbutton_end, 'end')))
-		self.list.append(QuickButtonListEntry('',((_('END') + _(' long')) + functionbutton_end_long, 'end_long')))
-		self.list.append(QuickButtonListEntry('',(_('VU+ R-Button') + functionbutton_pvr, 'pvr')))
-		self.list.append(QuickButtonListEntry('',((_('VU+ R-Button') + _(' long')) + functionbutton_pvr_long, 'pvr_long')))
-		self.list.append(QuickButtonListEntry('',(_('RADIO') + functionbutton_radio, 'radio')))
-		self.list.append(QuickButtonListEntry('',((_('RADIO') + _(' long')) + functionbutton_radio_long, 'radio_long')))
-		self.list.append(QuickButtonListEntry('',(_('TV') + functionbutton_tv, 'tv')))
-		self.list.append(QuickButtonListEntry('',(_('Cross Up') + functionbutton_cross_up, 'cross_up')))
-		self.list.append(QuickButtonListEntry('',(_('Cross Down') + functionbutton_cross_down, 'cross_down')))
-		self.list.append(QuickButtonListEntry('',(_('Cross Left') + functionbutton_cross_left, 'cross_left')))
-		self.list.append(QuickButtonListEntry('',(_('Cross Right') + functionbutton_cross_right, 'cross_right')))
-		self.list.append(QuickButtonListEntry('',(_('Channel +') + functionbutton_channelup, 'channelup')))
-		self.list.append(QuickButtonListEntry('',(_('Channel -') + functionbutton_channeldown, 'channeldown')))
-		self.list.append(QuickButtonListEntry('',(_('Forward >') + functionbutton_next, 'next')))
-		self.list.append(QuickButtonListEntry('',(_('Backward <') + functionbutton_previous, 'previous')))
-		self.list.append(QuickButtonListEntry('',(_('Audio') + functionbutton_audio, 'audio')))
-		if config.plugins.QuickButton.okexitstate.value:
-			self.list.append(QuickButtonListEntry('',('OK' + functionbutton_ok, 'ok')))
-			self.list.append(QuickButtonListEntry('',(_('EXIT') + functionbutton_exit, 'exit')))
-		self.list.append(QuickButtonListEntry('',(_('Play') + functionbutton_play, 'play')))
-		self.list.append(QuickButtonListEntry('',(_('Pause') + functionbutton_pause, 'pause')))
-		self.list.append(QuickButtonListEntry('',(_('Rewind <<') + functionbutton_rewind, 'rewind')))
-		self.list.append(QuickButtonListEntry('',(_('FastForward >>') + functionbutton_fastforward, 'fastforward')))
 		
 	def updateList(self):
 		self.createList()
@@ -392,7 +408,7 @@ class MultiQuickButton(Screen):
 		self.session.open(MultiQuickButtonMacro)
 
 	def showAbout(self):
-		self.session.open(MessageBox,("Multi Quickbutton idea is based on\nGP2\'s Quickbutton\nVersion: 2.7\nby Emanuel CLI-Team 2009\nwww.cablelinux.info\n ***special thanks*** to:\ngutemine & AliAbdul & Dr.Best ;-)\n\nChanges for VU+ by plnick\nplnick@vuplus-support.org\nwww.vuplus-support.org\nVersion %s" % (MultiQuickButton_version)),  MessageBox.TYPE_INFO)
+		self.session.open(MessageBox,("Multi Quickbutton idea is based on\nGP2\'s Quickbutton\nVersion: 2.7\nby Emanuel CLI-Team 2009\nwww.cablelinux.info\n ***special thanks*** to:\ngutemine & AliAbdul & Dr.Best ;-)\n\nChanges for Gigablue by kajgan\nkajgan@gigablue-support.com\nwww.gigablue-support.com\nVersion %s" % (MultiQuickButton_version)),  MessageBox.TYPE_INFO)
   
 	def callRestart(self, restart):
 		if restart == True:
@@ -839,7 +855,7 @@ class MultiQuickButtonMacro(Screen):
 					"138" : _("HELP"),
 					"115" : _("Volume +"),
 					"114" : _("Volume -"),
-					"113" : _("Mute"),
+					"113" : _("MUTE"),
 					"407" : _("Forward >"),
 					"412" : _("Backward <")
 				}
