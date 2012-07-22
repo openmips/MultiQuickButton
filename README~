@@ -13,5 +13,5 @@ from Emanuel (http://www.i-have-a-dreambox.com)
 file functions.py is only for translations (this has to be fixed :) )
 it is not installed at MultiQuickButton package
 
-MultiQuickButton is tagged with "Gigablue" because this plugin
+MultiQuickButton is tagged with "vu" because this plugin
 is not hardware independent (remote control buttons)
