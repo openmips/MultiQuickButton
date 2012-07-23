@@ -12,7 +12,7 @@
 		<key id="KEY_MEDIA" mapto="flist" flags="b" />
 		<key id="KEY_LIST" mapto="glist" flags="b" />
 		<key id="KEY_FAVORITES" mapto="fav" flags="b" />
-		<key id="KEY_SCREEN" mapto="apect" flags="b" />
+		<key id="KEY_SCREEN" mapto="aspect" flags="b" />
 		<key id="KEY_PREVIOUS" mapto="previous" flags="b" />
 		<key id="KEY_REWIND" mapto="rewind" flags="b" />
 		<key id="KEY_FASTFORWARD" mapto="fforward" flags="b" />

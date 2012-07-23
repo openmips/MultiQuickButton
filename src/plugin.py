@@ -285,36 +285,11 @@ def menu(menuid, **kwargs):
 	return []
 
 def Plugins(**kwargs):
-	if config.plugins.QuickButton.mainmenu.value:
-		return [PluginDescriptor(
-				where = [PluginDescriptor.WHERE_SESSIONSTART, PluginDescriptor.WHERE_AUTOSTART],
-				fnc = autostart),
-				PluginDescriptor(
-				name="Multi Quickbutton",
-				description="Multi Quickbutton for Keyboard and RC Gigablue",
-				where = PluginDescriptor.WHERE_PLUGINMENU,
-				icon="multiquickbutton.png",
-				fnc=main),
-				PluginDescriptor(
-				name="Multi Quickbutton",
-				where = PluginDescriptor.WHERE_EXTENSIONSMENU,
-				fnc=main),
-				PluginDescriptor(
-				name="Multi Quickbutton",
-				description="Multi Quickbutton for Keyboard and RC Gigablue",
-				where = PluginDescriptor.WHERE_MENU,
-				fnc=menu)]
-	else:
-		return [PluginDescriptor(
-				where = [PluginDescriptor.WHERE_SESSIONSTART, PluginDescriptor.WHERE_AUTOSTART],
-				fnc = autostart),
-				PluginDescriptor(
-				name="Multi Quickbutton",
-				description="Multi Quickbutton for Keyboard and RC Gigablue",
-				where = PluginDescriptor.WHERE_PLUGINMENU,
-				icon="multiquickbutton.png",
-				fnc=main),
-				PluginDescriptor(
-				name="Multi Quickbutton",
-				where = PluginDescriptor.WHERE_EXTENSIONSMENU,
-				fnc=main)]
+	return [PluginDescriptor(
+			where = [PluginDescriptor.WHERE_SESSIONSTART, PluginDescriptor.WHERE_AUTOSTART],
+			fnc = autostart),
+			PluginDescriptor(
+			name="Multi Quickbutton",
+			description="Multi Quickbutton for Keyboard and RC Gigablue",
+			where = PluginDescriptor.WHERE_MENU,
+			fnc=menu)]

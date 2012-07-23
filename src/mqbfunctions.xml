@@ -1,6 +1,7 @@
 <?xml version="1.0"  encoding="UTF-8" ?>
 
 <!-- global file for MultiQuickButton functions -->
+<!-- Added Vix support items vs 4 -->
 <xml>
 
 <mqbfunction>
@@ -126,6 +127,13 @@ if InfoBar and InfoBar.instance:
 </mqbfunction>
 
 <mqbfunction>
+<name>InfoBar VIX EPG</name>
+<code>from Screens.InfoBar import InfoBar
+if InfoBar and InfoBar.instance:
+	InfoBar.openGraphEPG(InfoBar.instance)</code>
+</mqbfunction>
+
+<mqbfunction>
 <name>InfoBar QuickEPG</name>
 <code>from Screens.InfoBar import InfoBar
 if InfoBar and InfoBar.instance:
@@ -215,15 +223,16 @@ if InfoBar and InfoBar.instance:
 </mqbfunction>
 
 <mqbfunction>
-<name>Switch 4:3 (Pillarbox) (Pan&amp;Scan)</name>
-<code>if config.av.policy_43.value == "pillarbox":
-	config.av.policy_43.value = "panscan"
-else:
-	config.av.policy_43.value = "pillarbox"
-	config.av.policy_43.save()
-from Screens.MessageBox import MessageBox
-aspectratio = {"panscan": _("Pan&amp;Scan"), "pillarbox": _("Pillarbox")}
-self.session.open(MessageBox, _("Display 4:3 content as\n") + aspectratio[config.av.policy_43.value], MessageBox.TYPE_INFO, 2)</code>
+<name>Switch Aspect</name>
+<code>mode = open("/proc/stb/video/policy").read()[:-1]
+tlist=[(0,"nonlinear"),(1,"letterbox"),(2,"panscan"),(3,"bestfit")]
+for x in tlist:
+	if x[1] == mode:
+		new = x[0] + 1
+		if new == 4:
+			new = 0
+		open("/proc/stb/video/policy", "w").write(tlist[new][1])
+</code>
 </mqbfunction>
 
 <mqbfunction>
