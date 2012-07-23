@@ -1,7 +1,6 @@
 <?xml version="1.0"  encoding="UTF-8" ?>
 
 <!-- global file for MultiQuickButton functions -->
-<!-- Added Vix support items vs 4 -->
 <xml>
 
 <mqbfunction>
@@ -124,13 +123,6 @@ if InfoBar and InfoBar.instance:
 <code>from Screens.InfoBar import InfoBar
 if InfoBar and InfoBar.instance:
 	InfoBar.openSingleServiceEPG(InfoBar.instance)</code>
-</mqbfunction>
-
-<mqbfunction>
-<name>InfoBar VIX EPG</name>
-<code>from Screens.InfoBar import InfoBar
-if InfoBar and InfoBar.instance:
-	InfoBar.openGraphEPG(InfoBar.instance)</code>
 </mqbfunction>
 
 <mqbfunction>

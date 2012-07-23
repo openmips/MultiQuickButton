@@ -1,6 +1,5 @@
 <keymap>
 	<map context="QuickButtonActions">
-		<key id="KEY_TV" mapto="tv" flags="b" />
 		<key id="KEY_MUTE" mapto="mute" flags="b" />
 		<key id="KEY_F1" mapto="f1" flags="b" />
 		<key id="KEY_F1" mapto="f1_long" flags="l" />

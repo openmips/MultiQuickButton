@@ -55,7 +55,7 @@ menuentry=_("Main menu") + ": "
 info=_("Info") + ": "
 okexit=_("OK/EXIT") + ": "
 
-values = ("tv","mute","f1","f1_long","f2","f2_long","f3","f3_long","f4","f4_long","flist","glist","fav","aspect","previous","rewind","fforward","next","timeshift","stop","playpause","record","volup","voldown","guide","guide_long","exit","chnup","chndown","info","info_long","audio","audio_long","info","up","left","down","right","menu","menu_long","video","video_long","history","history_long","opt","opt_long","text","text_long","red","red_long","green","green_long","yellow","yellow_long","blue","blue_long")
+values = ("mute","f1","f1_long","f2","f2_long","f3","f3_long","f4","f4_long","flist","glist","fav","aspect","previous","rewind","fforward","next","timeshift","stop","playpause","record","volup","voldown","guide","guide_long","exit","chnup","chndown","info","info_long","audio","audio_long","info","up","left","down","right","menu","menu_long","video","video_long","history","history_long","opt","opt_long","text","text_long","red","red_long","green","green_long","yellow","yellow_long","blue","blue_long")
 
 class MultiQuickButton(Screen):
 
@@ -179,7 +179,6 @@ class MultiQuickButton(Screen):
 			else:
 				globals()['functionbutton_%s' % button] = " "
 		self.list = []
-		self.list.append(QuickButtonListEntry('',(_('TV/RADIO') + functionbutton_tv, 'tv')))
 		self.list.append(QuickButtonListEntry('',(_('Mute') + functionbutton_mute, 'mute')))
 		self.list.append(QuickButtonListEntry('',(_('F1 (Giga)') + functionbutton_f1, 'f1')))
 		self.list.append(QuickButtonListEntry('',((_('F1 (Giga)') + _(' long')) + functionbutton_f1_long, 'f1_long')))
