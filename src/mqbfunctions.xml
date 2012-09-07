@@ -68,6 +68,20 @@ if InfoBar and InfoBar.instance:
 	InfoBar.zapUp(InfoBar.instance)</code>
 </mqbfunction>
 
+<mqbfunction> 
+<name>Channel zap (list) +</name> 
+<code>from Screens.InfoBar import InfoBar 
+if InfoBar and InfoBar.instance: 
+InfoBar.switchChannelUp(InfoBar.instance)</code> 
+</mqbfunction> 
+
+<mqbfunction> 
+<name>Channel zap (list) -</name> 
+<code>from Screens.InfoBar import InfoBar 
+if InfoBar and InfoBar.instance: 
+InfoBar.switchChannelDown(InfoBar.instance)</code> 
+</mqbfunction>
+
 <mqbfunction>
 <name>Zap history back</name>
 <code>from Screens.InfoBar import InfoBar
